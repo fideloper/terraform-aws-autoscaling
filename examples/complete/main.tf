@@ -118,7 +118,6 @@ module "complete" {
 
   block_device_mappings = [
     {
-      # Root volume
       device_name = "/dev/xvda"
       no_device   = 0
       ebs = {
@@ -127,7 +126,9 @@ module "complete" {
         volume_size           = 20
         volume_type           = "gp2"
       }
-      }, {
+    },
+    {
+      # Root volume
       device_name = "/dev/sda1"
       no_device   = 1
       ebs = {
